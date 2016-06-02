@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pedidos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipo de pedido</th>
+      <th>Fecha de entrada</th>
+      <th>Fecha de salida</th>
+      <th>Cliente</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.tipo_pedido %></td>
+        <td><%= order.fecha_entrada %></td>
+        <td><%= order.fecha_salida %></td>
+        <td><%= order.client_id %></td>
+        <td><%= link_to 'Mostrar', order %></td>
+        <td><%= link_to 'Editar', edit_order_path(order) %></td>
+        <td><%= link_to 'Eliminar', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo pedido', new_order_path %>

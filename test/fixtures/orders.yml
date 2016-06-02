@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipo_pedido: MyString
+  fecha_entrada: 2016-06-02
+  fecha_salida: 2016-06-02
+  client_id: 1
+
+two:
+  tipo_pedido: MyString
+  fecha_entrada: 2016-06-02
+  fecha_salida: 2016-06-02
+  client_id: 1
