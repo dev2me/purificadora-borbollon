@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+%html{:lang => "en"}
+%head
+	%meta{:charset => "UTF-8"}/
+	%title Purificadora de agua Borbollon
+	= csrf_meta_tags
+	%link{:rel => "stylesheet", :href => "https://cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css"}/
+	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+%body
+	.row.header
+		.col-xs.center-xs
+			%header
+				%h1.text-white Purificadora de agua Borbollon::Sistema de administración interna
+	= yield
+	= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

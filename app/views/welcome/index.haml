@@ -1,4 +1,6 @@
-%header
-	%h1 Purificadora Borbollon
-%p
-	=	link_to "Cerrar Session", destroy_user_session_path, method: :delete
+.row.center-xs.middle-xs
+	.col-xs.sub-header
+		= link_to "Administrar Empleados", empleados_path
+		= link_to "Administrar Clientes", clientes_path
+		= link_to "Administrar Pedidos", pedidos_path
+		=	link_to "Cerrar Session", destroy_user_session_path, method: :delete

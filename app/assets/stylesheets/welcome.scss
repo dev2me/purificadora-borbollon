@@ -1,3 +1,45 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html, body{
+	margin: 0;
+	padding: 0;
+}
+.header {
+	margin: 0;
+	width: 100%;
+	padding: 1em;
+	background-color: #0D47A1;
+}
+.sub-header {
+	background-color: #dc5757;
+	padding: 1em;
+}
+.text-white {
+	color: white;
+}
+.text-center {
+	text-align: center;
+}
+.btn-ingresar {
+	width: 30%;
+	background-color: #ccc;
+	padding: 1em;
+	cursor: pointer;
+	background-color: inherit;
+}
+.btn-ingresar:hover {
+	color: #333;
+	background-color: inherit;	
+}
+.box-input {
+	width: 25%;
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	border-bottom: 1px solid #0d47a1;
+	outline: inherit;
+}
+.btn-admin {
+
+}

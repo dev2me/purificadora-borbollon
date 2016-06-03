@@ -9,4 +9,4 @@
 #Crear clientes
 Client.create(name: "Jesus Rosas", direccion: "Av del monte s/n", telefono: "7221104340")
 Order.create(tipo_pedido: "Agua embotellada", fecha_entrada: "2/6/2016", fecha_salida: "2/6/2016", client_id: 1)
-User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+User.create!(email: 'infinitdeveloperofficial@gmail.com', password: 'qKq$}nCY3N', password_confirmation: 'qKq$}nCY3N')

@@ -1,0 +1,18 @@
+%h2.text-center Iniciar sesión
+.row.center-xs.middle-xs
+  .col-xs
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.label :email
+        = f.email_field :email, autofocus: true, class: "box-input"
+      .field
+        = f.label :password
+        = f.password_field :password, autocomplete: "off", class: "box-input"
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me
+          = f.label :remember_me
+      .actions
+        = f.submit "Ingresar"
+
+
