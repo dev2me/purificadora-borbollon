@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
-  
+
   resources :clients
   get 'clientes' => 'clients#index', as: "clientes"
+  get 'nuevo/cliente' => 'clients#new', as: "nuevo_cliente"
 
   resources :orders
-  get 'pedidos' => 'orders#index', as: "pedidos"
+  get 'nuevo/pedido' => 'orders#new', as: "nuevo_pedido"
 
   resources :employees
   get 'empleados' => 'employees#index', as: "empleados"
+  get 'nuevo/empleado' => 'employees#new', as: "nuevo_empleado"
 
   authenticated :user do
   	root 'welcome#index'

@@ -1,4 +1,12 @@
-.full
-	%h1.text-center Bienvenido al sistema
-	%p.text-center
-		= link_to "Ingresar al sistema", new_user_session_path, class:"btn-ingresar"
+.video-container
+	%video{autoplay: true, loop: true, poster: "#{image_path "Agua-natural.jpg"}"}
+		%source{src: "#{video_path "agua-natural.mp4"}"}/
+		%source{src: "#{video_path "agua-natural.webm"}"}/
+.row.full-height.center-xs.between-xs.frente
+	.col-xs-6
+		.box
+			%h1.regular.white-text Purificadora de Agua "Borbollon"
+	.col-xs-6
+		.box
+			=link_to "Ingresar", new_user_session_path, class: "btn-ingresar regular white"
+			= link_to "Crear Cuenta", new_user_registration_path, class: "btn-ingresar regular white"

@@ -1,6 +1,39 @@
-.row.center-xs.middle-xs
-	.col-xs.sub-header
-		= link_to "Administrar Empleados", empleados_path
-		= link_to "Administrar Clientes", clientes_path
-		= link_to "Administrar Pedidos", pedidos_path
-		=	link_to "Cerrar Session", destroy_user_session_path, method: :delete
+.row.center-xs.middle-xs.dark-gray
+	.col-xs
+		.box
+			%h2.regular.white-text Bienvenido: #{@user.email}
+	.col-xs
+		.box
+			%h2.white-text= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, class: "btn-session"
+.row.center-xs.middle-xs.between-xs.top
+	.col-xs.box-tool.blue
+		.box
+			=link_to nuevo_cliente_path do
+				%h2.white-text.line-text Nuevo Cliente
+	.col-xs.box-tool.blue
+		.box
+			=link_to nuevo_empleado_path do
+				%h2.white-text.line-text Nuevo Empleado
+	.col-xs.box-tool.blue
+		.box
+			=link_to nuevo_pedido_path do
+				%h2.white-text.line-text Nuevo Pedido
+
+
+.row.center-xs.middle-xs.between-xs.top
+	.col-xs-6
+		.box.card
+			%h1 Datos del Cliente
+			-@clients.each do |client|
+				%h2 Nombre del Cliente: #{client.nombre}
+				%h2 Domicilio: #{client.direccion}
+				%h2 Tipo de pedido: #{client.orders.find(client.id).pedido}
+				=link_to "Editar Datos", edit_client_path(client)
+	.col-xs-6
+		.box
+			%h1 Lista de Pedidos
+			-@orders.each do |order|
+				%ul
+					%li #{order.pedido}
+
+

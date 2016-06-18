@@ -1,36 +1,61 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$colors:(
+	white: white,
+	dark-gray: #263238,
+	blue: #2196F3
+);
+$height-box: 100px;
+@each $color, $value in $colors{
+	.#{$color} {
+		background-color: $value;
+	}
+	.#{$color}-text {
+		color: $value;
+	}
+}
 html, body{
 	margin: 0;
 	padding: 0;
+	height: 100%;
 }
-.header {
+.row {
 	margin: 0;
+}
+.full-height {
+	height: 100%;
+}
+.video-container {
+	height: 100%;
 	width: 100%;
-	padding: 1em;
-	background-color: #0D47A1;
+	overflow: hidden;
+	position: absolute;
+	video {
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%)
+	}
 }
-.sub-header {
-	background-color: #dc5757;
-	padding: 1em;
-}
-.text-white {
-	color: white;
+.frente {
+	z-index: 10;
+	position: relative;
 }
 .text-center {
 	text-align: center;
 }
 .btn-ingresar {
-	width: 30%;
-	background-color: #ccc;
+	display: inline-block;
+	width: 25%;
 	padding: 1em;
 	cursor: pointer;
-	background-color: inherit;
-}
-.btn-ingresar:hover {
-	color: #333;
-	background-color: inherit;	
+	text-decoration: none;
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
 }
 .box-input {
 	width: 25%;
@@ -40,6 +65,33 @@ html, body{
 	border-bottom: 1px solid #0d47a1;
 	outline: inherit;
 }
-.btn-admin {
+.box-tool {
+	width: 100%;
+	height: $height-box;
+}
+.card {
+	box-shadow: 0px 2px 8px;
+	padding: 1em;
+}
+/*Fonts Widths*/
+.bold{
+	font-weight: 700;
+}
+.light{
+	font-weight: 300;
+}
+.regular {
+	font-weight: 400;
+}
 
+.top {
+	margin-top: 5px;
+}
+
+.line-text {
+	line-height: $height-box/2;
+}
+.btn-session {
+	color: white;
+	text-decoration: none;
 }

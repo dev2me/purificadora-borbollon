@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160602223402) do
+ActiveRecord::Schema.define(version: 20160618160553) do
 
   create_table "clients", force: :cascade do |t|
-    t.string   "name"
+    t.string   "nombre"
     t.string   "direccion"
     t.string   "telefono"
     t.datetime "created_at", null: false
@@ -31,12 +31,11 @@ ActiveRecord::Schema.define(version: 20160602223402) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string   "tipo_pedido"
-    t.date     "fecha_entrada"
-    t.date     "fecha_salida"
-    t.integer  "client_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string  "pedido"
+    t.date    "fecha_entrada"
+    t.date    "fecha_salida"
+    t.integer "client_id"
+    t.index ["client_id"], name: "index_orders_on_client_id"
   end
 
   create_table "users", force: :cascade do |t|
